@@ -10,3 +10,4 @@ import { NinregistrationModule } from './ninregistration/ninregistration.module'
   providers: [AppService],
 })
 export class AppModule {}
+//olu
