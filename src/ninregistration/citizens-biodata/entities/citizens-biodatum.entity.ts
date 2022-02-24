@@ -18,6 +18,9 @@ export class CitizensBiodatum {
     dateOfBirth: Date;
 
     @Column()
+    Nationality: string;
+
+    @Column()
     countryOfbirth: string;
 
     @Column()
