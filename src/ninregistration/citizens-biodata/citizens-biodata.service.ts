@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateCitizensBiodatumDto } from './dto/create-citizens-biodatum.dto';
 import { UpdateCitizensBiodatumDto } from './dto/update-citizens-biodatum.dto';
-
+import { CitizensBiodatum } from './entities/citizens-biodatum.entity';
 @Injectable()
 export class CitizensBiodataService {
   create(createCitizensBiodatumDto: CreateCitizensBiodatumDto) {
