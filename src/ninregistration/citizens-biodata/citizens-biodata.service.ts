@@ -6,7 +6,8 @@ import { UpdateCitizensBiodatumDto } from './dto/update-citizens-biodatum.dto';
 import { CitizensBiodatum } from './entities/citizens-biodatum.entity';
 @Injectable()
 export class CitizensBiodataService {
-  create(createCitizensBiodatumDto: CreateCitizensBiodatumDto) {
+  async create(createCitizensBiodatumDto: CreateCitizensBiodatumDto)
+   {
     return 'This action adds a new citizensBiodatum';
   }
 
