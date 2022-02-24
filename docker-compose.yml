@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  database:
+    container_name: ISM209CA3
+    image: postgres:latest 
+    ports: 
+      - "5435:5432"    
+    env_file:
+      - waf.env
+    volumes:  
+      - /var/lib/postgresql/data
