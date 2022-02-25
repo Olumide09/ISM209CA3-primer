@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateLinkedIdentityDto } from './dto/create-linked-identity.dto';
 import { UpdateLinkedIdentityDto } from './dto/update-linked-identity.dto';
-
+import { LinkedIdentity } from './entities/linked-identity.entity';
 @Injectable()
 export class LinkedIdentitiesService {
   create(createLinkedIdentityDto: CreateLinkedIdentityDto) {
