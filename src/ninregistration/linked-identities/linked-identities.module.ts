@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { LinkedIdentity } from './entities/linked-identity.entity';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([])],
   controllers: [LinkedIdentitiesController],
   providers: [LinkedIdentitiesService]
 })
