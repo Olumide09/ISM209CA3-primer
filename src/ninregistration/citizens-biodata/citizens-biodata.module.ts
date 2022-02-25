@@ -6,6 +6,8 @@ import { CitizensBiodatum } from './entities/citizens-biodatum.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([])],
+  
+
   controllers: [CitizensBiodataController],
   providers: [CitizensBiodataService]
 })
