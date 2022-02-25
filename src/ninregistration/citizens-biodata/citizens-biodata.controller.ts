@@ -1,15 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Render } from '@nestjs/common';
 import { CitizensBiodataService } from './citizens-biodata.service';
 import { CreateCitizensBiodatumDto } from './dto/create-citizens-biodatum.dto';
 import { UpdateCitizensBiodatumDto } from './dto/update-citizens-biodatum.dto';
 
 @Controller('citizens-biodata')
 export class CitizensBiodataController {
-  constructor(private readonly citizensBiodataService: CitizensBiodataService) {}
+  constructor(private readonly citizensBiodataService: CitizensBiodataService) { }
 
   @Post()
   create(@Body() createCitizensBiodatumDto: CreateCitizensBiodatumDto) {
     return this.citizensBiodataService.create(createCitizensBiodatumDto);
+  }
+  @Get('create')
+  @Render('citizens-biodata/create-citizensbiodata.html')
+  createForm() {
   }
 
   @Get()
@@ -31,6 +35,4 @@ export class CitizensBiodataController {
   remove(@Param('id') id: string) {
     return this.citizensBiodataService.remove(+id);
   }
-
-  
 }
