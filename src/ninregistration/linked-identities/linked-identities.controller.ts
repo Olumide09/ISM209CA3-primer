@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Render } from '@nestjs/common';
 import { LinkedIdentitiesService } from './linked-identities.service';
 import { CreateLinkedIdentityDto } from './dto/create-linked-identity.dto';
 import { UpdateLinkedIdentityDto } from './dto/update-linked-identity.dto';
@@ -10,6 +10,11 @@ export class LinkedIdentitiesController {
   @Post()
   create(@Body() createLinkedIdentityDto: CreateLinkedIdentityDto) {
     return this.linkedIdentitiesService.create(createLinkedIdentityDto);
+  }
+
+  @Get('create')
+  @Render('linked-identities/create-linkedidentity.html')
+  createForm() {
   }
 
   @Get()
