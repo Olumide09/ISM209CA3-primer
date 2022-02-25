@@ -31,4 +31,6 @@ export class CitizensBiodataController {
   remove(@Param('id') id: string) {
     return this.citizensBiodataService.remove(+id);
   }
+
+  
 }
