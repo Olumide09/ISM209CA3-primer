@@ -10,23 +10,28 @@ export class LinkedIdentitiesService {
     @InjectRepository(LinkedIdentity)
     private LinkedIdentitiesRespository: Repository <LinkedIdentity>
   ){}
-  create(createLinkedIdentityDto: CreateLinkedIdentityDto) {
-    return 'This action adds a new linkedIdentity';
+  async create(createLinkedIdentityDto: CreateLinkedIdentityDto) {
+   // return 'This action adds a new linkedIdentity';
+   return this.LinkedIdentitiesRespository.save(new LinkedIdentity);
   }
 
-  findAll() {
-    return `This action returns all linkedIdentities`;
+  async findAll() {
+   // return `This action returns all linkedIdentities`;
+   return await this.LinkedIdentitiesRespository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} linkedIdentity`;
+  async findOne(id: number) {
+    //return `This action returns a #${id} linkedIdentity`;
+    return await this.LinkedIdentitiesRespository.findOne();
   }
 
-  update(id: number, updateLinkedIdentityDto: UpdateLinkedIdentityDto) {
-    return `This action updates a #${id} linkedIdentity`;
+  async update(id: number, updateLinkedIdentityDto: UpdateLinkedIdentityDto) {
+   // return `This action updates a #${id} linkedIdentity`;
+   return await this.LinkedIdentitiesRespository.update(id,new UpdateLinkedIdentityDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} linkedIdentity`;
+  async remove(id: number) {
+   // return `This action removes a #${id} linkedIdentity`;
+   return await this.LinkedIdentitiesRespository.delete(id);
   }
 }
