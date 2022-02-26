@@ -4,8 +4,15 @@ import { Repository } from 'typeorm';
 import { CreateCitizensBiodatumDto } from './dto/create-citizens-biodatum.dto';
 import { UpdateCitizensBiodatumDto } from './dto/update-citizens-biodatum.dto';
 import { CitizensBiodatum } from './entities/citizens-biodatum.entity';
+
+
 @Injectable()
 export class CitizensBiodataService {
+  constructor(
+  @InjectRepository(CitizensBiodatum)
+  private  CitizensBiodataRepository: Repository<CitizensBiodatum>
+  ){}
+
   async create(createCitizensBiodatumDto: CreateCitizensBiodatumDto)
    {
     return 'This action adds a new citizensBiodatum';

@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CitizensBiodatum } from './entities/citizens-biodatum.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([])],
+  imports: [TypeOrmModule.forFeature([CitizensBiodatum])],
   controllers: [CitizensBiodataController],
   providers: [CitizensBiodataService]
 })
