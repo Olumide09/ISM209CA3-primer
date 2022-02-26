@@ -6,6 +6,10 @@ import { UpdateLinkedIdentityDto } from './dto/update-linked-identity.dto';
 import { LinkedIdentity } from './entities/linked-identity.entity';
 @Injectable()
 export class LinkedIdentitiesService {
+  constructor(
+    @InjectRepository(LinkedIdentity)
+    private LinkedIdentitiesRespository: Repository <LinkedIdentity>
+  ){}
   create(createLinkedIdentityDto: CreateLinkedIdentityDto) {
     return 'This action adds a new linkedIdentity';
   }
