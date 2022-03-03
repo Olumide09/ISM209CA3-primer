@@ -5,10 +5,10 @@ export class CitizensBiodatum {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({nullable:true} )
     firstName: string;
 
-    @Column()
+    @Column({nullable:true} )
     middleName: string;
 
     @Column()
@@ -17,22 +17,22 @@ export class CitizensBiodatum {
     @Column()
     dateOfBirth: Date;
 
-    @Column()
+    @Column({nullable:true} )
     Nationality: string;
 
-    @Column()
+    @Column( {nullable:true} )
     countryOfbirth: string;
 
-    @Column()
+    @Column({nullable:true} )
     townOfbirth: string;
 
-    @Column()
+    @Column({nullable:true} )
     stateOfbirth: string;
 
-    @Column()
+    @Column({nullable:true} )
     ResidenceAddress: string;
 
-    @Column()
+    @Column({nullable:true} )
     Profession: string;
 
 }
