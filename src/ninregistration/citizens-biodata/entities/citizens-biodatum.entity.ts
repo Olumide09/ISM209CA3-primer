@@ -8,13 +8,13 @@ export class CitizensBiodatum {
     @Column()
     firstName: string;
 
-    @Column({ nullable: true })
+    @Column()
     middleName: string;
 
     @Column()
     lastName: string;
 
-    @Column({ nullable: true })
+    @Column()
     dateOfBirth: Date;
 
     @Column()
