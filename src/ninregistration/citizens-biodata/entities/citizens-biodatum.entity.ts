@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 
 export class CitizensBiodatum {
@@ -34,5 +34,10 @@ export class CitizensBiodatum {
 
     @Column({nullable:true} )
     Profession: string;
+
+    @JoinColumn()
+    @OneToOne(type=> CitizensBiodatum, citizensbiodata => citizensbiodata.linkedidentity, {cascade: true})
+    citizensbiodata: CitizensBiodatum
+    linkedidentity: any;
 
 }
