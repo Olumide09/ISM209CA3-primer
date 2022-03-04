@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { CitizensBiodatum } from "src/ninregistration/citizens-biodata/entities/citizens-biodatum.entity";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn, JoinColumn } from "typeorm";
 @Entity()
 export class LinkedIdentity {
     @PrimaryGeneratedColumn()
@@ -9,5 +10,9 @@ export class LinkedIdentity {
 
     @Column({nullable: true})
     MobileNumber: number;
+
+    @JoinColumn()
+    @OneToOne(type=> CitizensBiodatum, citizensbiodata => citizensbiodata.linkedidentity, {cascade: true})
+    citizensbiodata: CitizensBiodatum
     
 }
