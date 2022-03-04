@@ -4,10 +4,10 @@ export class LinkedIdentity {
     @PrimaryGeneratedColumn()
     NIN: number;
 
-    @Column()
+    @Column({ nullable: true})
     BVN: number;
 
-    @Column()
+    @Column({nullable: true})
     MobileNumber: number;
     
 }
