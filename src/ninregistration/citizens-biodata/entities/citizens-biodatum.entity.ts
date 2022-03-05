@@ -1,3 +1,4 @@
+import { LinkedIdentity } from "src/ninregistration/linked-identities/entities/linked-identity.entity";
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 
@@ -38,6 +39,6 @@ export class CitizensBiodatum {
     @JoinColumn()
     @OneToOne(type=> CitizensBiodatum, citizensbiodata => citizensbiodata.linkedidentity, {cascade: true})
     citizensbiodata: CitizensBiodatum
-    linkedidentity: any;
+    linkedidentity: LinkedIdentity
 
 }
